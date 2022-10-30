@@ -58,7 +58,7 @@ touch .env
 ```
 
 ## Known Bugs
-* _On occasion, my work environment likes to die on me. Running new repo with an environment that is stable_
+* _The main issue I'm having is that my parameters are being returned undefined_
 
 ## License
 * _MIT_
