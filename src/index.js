@@ -11,6 +11,7 @@ import Currency from './currency';
 
 async function exchangeRate(currencyOne, currencyTwo, money) {
   const response = await Currency.exchangeRate(currencyOne, currencyTwo, money);
+  console.log(response)
   if (response.result === "success") {
     printElems(response);
   } else {
@@ -18,22 +19,22 @@ async function exchangeRate(currencyOne, currencyTwo, money) {
   }
 }
 
-printElems = (response, currencyOne, currencyTwo, money) => {
-  document.querySelector('#forNowResponse').innerText = `${currencyOne} ${money} is ${response["conversion_result"]} ${currencyTwo}`
+function printElems (response, currencyOne, currencyTwo, money) {
+  document.querySelector('#forNowResponse').innerText = `${currencyOne} ${money} is ${response["conversion_result"]} ${currencyTwo}`;
 }
 
-printError = (error, currencyOne, currencyTwo, money) => {
-  document.querySelector('#forNowResponse').innerText = `Computing too hard. Could not get ${currencyOne} to ${currencyTwo} to get any ${money}. Try again ${error}.`
+function printError (error, currencyOne, currencyTwo, money) { 
+  document.querySelector('#forNowResponse').innerText = `Computing too hard. Could not get ${currencyOne} to ${currencyTwo} to get any ${money}. Try again ${error}.`;
 }
 
-submitionForm = (event) => {
+function submissionForm (event) {
   event.preventDefault();
-  let currencyOne = document.getElementById('number1').value;
-  document.getElementById('number1').value = null;
-  let currencyTwo = document.getElementById('number2').value;
-  document.getElementById('number2').value = null;
+  let currencyOne = document.getElementById('currencyOne').value;
+  let currencyTwo = document.getElementById('currencyTwo').value;
   let money = document.getElementById('cashMoney').value;
-  document.getElementById('cashMoney').value = null;
   exchangeRate(currencyOne, currencyTwo, money);
 }
 
+window.addEventListener('load', () => {
+  document.getElementById('form').addEventListener('submit', submissionForm);
+});
