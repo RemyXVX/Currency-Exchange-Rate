@@ -52,7 +52,10 @@ npm init -y
 ```
 npm install
 ```
-From there you should be able to make changes.
+From there you should get your own API key from [ExchangeRae-API](https://www.exchangerate-api.com/) to then apply it onto project. Don't forget to make  <big>**.env**</big> file to protect all import keys!!!
+```
+touch .env
+```
 
 ## Known Bugs
 * _On occasion, my work environment likes to die on me. Running new repo with an environment that is stable_
