@@ -56,9 +56,14 @@ From there you should get your own API key from [ExchangeRae-API](https://www.ex
 ```
 touch .env
 ```
+Afterwards, you can then place you API key in you **<big>.env</big>** like so;
+```
+API_KEY=[your key]
+```
+From there you should be able to run the application with no issue!
 
 ## Known Bugs
-* _The main issue I'm having is that my parameters are being returned undefined_
+* _I made this_
 
 ## License
 * _MIT_
