@@ -28,5 +28,14 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.3"
-  }
+  },
+  "description": "* HTML\r * CSS\r * JavaScript\r * Eslint\r * Babel\r * VSCode\r * GitBash\r * Node.JS\r * JSON",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RemyXVX/Currency-Exchange-Rate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RemyXVX/Currency-Exchange-Rate/issues"
+  },
+  "homepage": "https://github.com/RemyXVX/Currency-Exchange-Rate#readme"
 }
