@@ -11,20 +11,19 @@ import Currency from './currency';
 
 async function exchangeRate(currencyOne, currencyTwo, money) {
   const response = await Currency.exchangeRate(currencyOne, currencyTwo, money);
-  console.log(response)
   if (response.result === "success") {
-    printElems(response);
+    printElems(response, currencyOne, currencyTwo, money);
   } else {
-    printError(response);
+    printError(response, currencyOne, currencyTwo, money);
   }
 }
 
 function printElems (response, currencyOne, currencyTwo, money) {
-  document.querySelector('#forNowResponse').innerText = `${currencyOne} ${money} is ${response["conversion_result"]} ${currencyTwo}`;
+  document.querySelector('#forNowResponse').innerText = `${money} ${currencyOne} is ${response["conversion_result"].toFixed(2)} ${currencyTwo}`;
 }
 
 function printError (error, currencyOne, currencyTwo, money) { 
-  document.querySelector('#forNowResponse').innerText = `Computing too hard. Could not get ${currencyOne} to ${currencyTwo} to get any ${money}. Try again ${error}.`;
+  document.querySelector('#forNowResponse').innerText = `Computing too hard. Couldn't exchange ${money} from ${currencyOne} to ${currencyTwo}. Try again ${error}.`;
 }
 
 function submissionForm (event) {
@@ -32,6 +31,7 @@ function submissionForm (event) {
   let currencyOne = document.getElementById('currencyOne').value;
   let currencyTwo = document.getElementById('currencyTwo').value;
   let money = document.getElementById('cashMoney').value;
+
   exchangeRate(currencyOne, currencyTwo, money);
 }
 
